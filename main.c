@@ -5,9 +5,19 @@
 
 int main(int argc, char *argv[]) 
 {
-	char str[30]="happy C programming";
+	char input[100];
+	FILE* fp;
 	
-	printf("string %s length:%i\n", str, strlen(str));
+	//fopen
+	fp=fopen("sample.txt","w");
+	
+	//fprintf 
+	printf("input a word:");
+	scanf("%s", input);
+	fprintf(fp, "%s\n", input);
+	
+	//fclose
+	fclose(fp);
 	
 	return 0;
 }
